@@ -1,7 +1,8 @@
 #!/bin/bash
 #script by jmbarros at tech4it.com.br
 #install rundek at softlayer
-apt-get update -y >> /bin/false  2>&1
+dir=`pwd`
+
 apt-get git -y 2>&1
 
 echo "Digit GITHUB User"
@@ -12,6 +13,6 @@ read repo
 
 git clone https://github.com/$user/$repo
 
-cd $repo
+chmod 755 $dir/$repo/*
 
-chmod 755 *
+$dir/$repo/install_first.sh
